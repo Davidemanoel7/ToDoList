@@ -107,7 +107,19 @@ class MyHomeState extends State<MyHome> {
                   return Card(
                     child: ListTile(
                       title: Text(tasks[index]),
-                    )
+                      leading: ElevatedButton(
+                        onPressed: (){
+                          setState(() {
+                            tasks.remove(tasks[index]);
+                          });
+                        },
+                        child: Icon(
+                          Icons.remove_circle,
+                          color: Colors.red.shade400,
+                        )
+                      ) ,
+                    ),
+                        
                   );
                 },
               ) 
